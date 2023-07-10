@@ -1,55 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Conditional Sequential Dropdowns</title>
-    <script>
-        function populateCity() {
-            var stateDropdown = document.getElementById("state");
-            var cityDropdown = document.getElementById("city");
-
-            var selectedState = stateDropdown.value;
-
-            // Clear existing options
-            cityDropdown.innerHTML = "";
-
-            // Add options based on selected state
-            if (selectedState === "California") {
-                var californiaCities = ["Los Angeles", "San Francisco", "San Diego"];
-                for (var i = 0; i < californiaCities.length; i++) {
-                    var option = document.createElement("option");
-                    option.text = californiaCities[i];
-                    cityDropdown.add(option);
-                }
-            } else if (selectedState === "Texas") {
-                var texasCities = ["Houston", "Dallas", "Austin"];
-                for (var j = 0; j < texasCities.length; j++) {
-                    var option = document.createElement("option");
-                    option.text = texasCities[j];
-                    cityDropdown.add(option);
-                }
-            } // Add more conditions for other states
-
-            // Reset city dropdown to default option
-            cityDropdown.selectedIndex = 0;
-        }
-    </script>
+  <title>Sequential Dropdowns</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Function to populate the second dropdown based on the selected option from the first dropdown
+    function populateSecondDropdown() {
+      var firstDropdown = document.getElementById('first-dropdown');
+      var secondDropdown = document.getElementById('second-dropdown');
+      var selectedOption = firstDropdown.value;
+      
+      // Clear the second and third dropdowns
+      secondDropdown.innerHTML = "";
+      thirdDropdown.innerHTML = "";
+      
+      // Check if an option is selected in the first dropdown
+      if (selectedOption) {
+        // Make an AJAX request to fetch the subfolders/files of the selected option
+        $.ajax({
+          url: "fetch_dropdown_options.php", // Replace with the path to your server-side script
+          type: "POST",
+          data: { selectedOption: selectedOption },
+          dataType: 'json',
+          success: function(response) {
+            // Populate the second dropdown with the fetched options
+            response.forEach(function(option) {
+              var optionElement = document.createElement('option');
+              optionElement.value = option;
+              optionElement.textContent = option;
+              secondDropdown.appendChild(optionElement);
+            });
+          },
+          error: function() {
+            alert('Error occurred while fetching dropdown options!');
+          }
+        });
+      }
+    }
+    
+    // Function to populate the third dropdown based on the selected option from the second dropdown
+    function populateThirdDropdown() {
+      var secondDropdown = document.getElementById('second-dropdown');
+      var thirdDropdown = document.getElementById('third-dropdown');
+      var selectedOption = secondDropdown.value;
+      
+      // Clear the third dropdown
+      thirdDropdown.innerHTML = "";
+      
+      // Check if an option is selected in the second dropdown
+      if (selectedOption) {
+        // Make an AJAX request to fetch the subfolders/files of the selected option
+        $.ajax({
+          url: "fetch_dropdown_options.php", // Replace with the path to your server-side script
+          type: "POST",
+          data: { selectedOption: selectedOption },
+          dataType: 'json',
+          success: function(response) {
+            // Populate the third dropdown with the fetched options
+            response.forEach(function(option) {
+              var optionElement = document.createElement('option');
+              optionElement.value = option;
+              optionElement.textContent = option;
+              thirdDropdown.appendChild(optionElement);
+            });
+          },
+          error: function() {
+            alert('Error occurred while fetching dropdown options!');
+          }
+        });
+      }
+    }
+  </script>
 </head>
 <body>
-    <h2>Conditional Sequential Dropdowns</h2>
-    <label for="state">State:</label>
-    <select id="state" onchange="populateCity()">
-        <option value="">Select a state</option>
-        <option value="California">California</option>
-        <option value="Texas">Texas</option>
-        <!-- Add more state options here -->
-    </select>
-
-    <br><br>
-
-    <label for="city">City:</label>
-    <select id="city">
-        <option value="">Select a city</option>
-        <!-- City options will be dynamically populated based on the selected state -->
-    </select>
+  <h1>Sequential Dropdowns</h1>
+  
+  <!-- First Dropdown -->
+  <select id="first-dropdown" onchange="populateSecondDropdown()">
+    <option value="">Select an option</option>
+    <option value="folder1">Folder 1</option>
+    <option value="folder2">Folder 2</option>
+    <option value="folder3">Folder 3</option>
+  </select>
+  
+  <!-- Second Dropdown -->
+  <select id="second-dropdown" onchange="populateThirdDropdown()">
+    <option value="">Select an option</option>
+  </select>
+  
+  <!-- Third Dropdown -->
+  <select id="third-dropdown">
+    <option value="">Select an option</option>
+  </select>
 </body>
 </html>
+
+
+In this updated code, we added a third dropdown and a new function populateThirdDropdown() to handle its population. The populateThirdDropdown() function is triggered when an option is selected in the second dropdown (onchange="populateThirdDropdown()").
+
+Similarly to the first and second dropdowns, the third dropdown is cleared before populating it with the fetched options from the server-side script.
+
+Remember to update the server-side script accordingly to handle the third dropdown's requests and provide the appropriate options.

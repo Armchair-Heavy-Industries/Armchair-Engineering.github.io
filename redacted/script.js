@@ -46,6 +46,6 @@ function loadProbes() {
   probeDropdown.disabled = true;
 
   var selectedExtruder = extruderDropdown.value;
-
+  var probeOptions = ["Probe 1", "Probe 2", "Probe 3"];
   // Make an API call or fetch data from the "probes" folder based on the selected extruder
   // Populate

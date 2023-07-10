@@ -77,27 +77,20 @@
   
   <!-- First Dropdown -->
   <select id="first-dropdown" onchange="populateSecondDropdown()">
-    <option value="">Select an option</option>
-    <option value="folder1">Folder 1</option>
-    <option value="folder2">Folder 2</option>
-    <option value="folder3">Folder 3</option>
+    <option value="">Select a hotend</option>
+    <option value="folder1">Goliath</option>
+    <option value="folder2">Waterheater</option>
+    <option value="folder3">Rapido</option>
   </select>
   
   <!-- Second Dropdown -->
   <select id="second-dropdown" onchange="populateThirdDropdown()">
-    <option value="">Select an option</option>
+    <option value="">Select an extruder</option>
   </select>
   
   <!-- Third Dropdown -->
   <select id="third-dropdown">
-    <option value="">Select an option</option>
+    <option value="">Select an probe</option>
   </select>
 </body>
 </html>
-
-
-In this updated code, we added a third dropdown and a new function populateThirdDropdown() to handle its population. The populateThirdDropdown() function is triggered when an option is selected in the second dropdown (onchange="populateThirdDropdown()").
-
-Similarly to the first and second dropdowns, the third dropdown is cleared before populating it with the fetched options from the server-side script.
-
-Remember to update the server-side script accordingly to handle the third dropdown's requests and provide the appropriate options.

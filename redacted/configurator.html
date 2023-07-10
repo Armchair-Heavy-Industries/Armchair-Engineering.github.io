@@ -1,96 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Sequential Dropdowns</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    // Function to populate the second dropdown based on the selected option from the first dropdown
-    function populateSecondDropdown() {
-      var firstDropdown = document.getElementById('first-dropdown');
-      var secondDropdown = document.getElementById('second-dropdown');
-      var selectedOption = firstDropdown.value;
-      
-      // Clear the second and third dropdowns
-      secondDropdown.innerHTML = "";
-      thirdDropdown.innerHTML = "";
-      
-      // Check if an option is selected in the first dropdown
-      if (selectedOption) {
-        // Make an AJAX request to fetch the subfolders/files of the selected option
-        $.ajax({
-          url: "fetch_dropdown_options.php", // Replace with the path to your server-side script
-          type: "POST",
-          data: { selectedOption: selectedOption },
-          dataType: 'json',
-          success: function(response) {
-            // Populate the second dropdown with the fetched options
-            response.forEach(function(option) {
-              var optionElement = document.createElement('option');
-              optionElement.value = option;
-              optionElement.textContent = option;
-              secondDropdown.appendChild(optionElement);
-            });
-          },
-          error: function() {
-            alert('Error occurred while fetching dropdown options!');
-          }
-        });
-      }
-    }
-    
-    // Function to populate the third dropdown based on the selected option from the second dropdown
-    function populateThirdDropdown() {
-      var secondDropdown = document.getElementById('second-dropdown');
-      var thirdDropdown = document.getElementById('third-dropdown');
-      var selectedOption = secondDropdown.value;
-      
-      // Clear the third dropdown
-      thirdDropdown.innerHTML = "";
-      
-      // Check if an option is selected in the second dropdown
-      if (selectedOption) {
-        // Make an AJAX request to fetch the subfolders/files of the selected option
-        $.ajax({
-          url: "fetch_dropdown_options.php", // Replace with the path to your server-side script
-          type: "POST",
-          data: { selectedOption: selectedOption },
-          dataType: 'json',
-          success: function(response) {
-            // Populate the third dropdown with the fetched options
-            response.forEach(function(option) {
-              var optionElement = document.createElement('option');
-              optionElement.value = option;
-              optionElement.textContent = option;
-              thirdDropdown.appendChild(optionElement);
-            });
-          },
-          error: function() {
-            alert('Error occurred while fetching dropdown options!');
-          }
-        });
-      }
-    }
-  </script>
-</head>
-<body>
-  <h1>Sequential Dropdowns</h1>
-  
-  <!-- First Dropdown -->
-  <select id="first-dropdown" onchange="populateSecondDropdown()">
-    <option value="">Select a hotend</option>
-    <option value="folder1">Goliath</option>
-    <option value="folder2">Waterheater</option>
-    <option value="folder3">Rapido</option>
-  </select>
-  
-  <!-- Second Dropdown -->
-  <select id="second-dropdown" onchange="populateThirdDropdown()">
-    <option value="">Select an extruder</option>
-  </select>
-  
-  <!-- Third Dropdown -->
-  <select id="third-dropdown">
-    <option value="">Select an probe</option>
-  </select>
-</body>
-</html>
+<select id="hotendDropdown" onchange="loadExtruders()">
+  <option value="">Select Hotend</option>
+</select>
+
+<select id="extruderDropdown" onchange="loadProbes()" disabled>
+  <option value="">Select Extruder</option>
+</select>
+
+<select id="probeDropdown" disabled>
+  <option value="">Select Probe</option>
+</select>

@@ -1,9 +1,27 @@
+
+
+function loadCooling() {
+  var coolingDropdown = document.getElementById("coolingDropdown");
+
+  var coolingOptions = ["cooling 1", "cooling 2", "cooling 3"];    //fetch folder names later
+ 
+  coolingOptions.forEach(function (option) {
+    var coolingOption = document.createElement("option");
+    coolingOption.text = option;
+    coolingDropdown.add(coolingOption);
+  });
+
+}
+
 function loadHotends() {
+  var coolingDropdown = document.getElementById("coolingDropdown");
   var hotendDropdown = document.getElementById("hotendDropdown");
 
+  var selectedCooling = coolingDropdown.value;
 
-  var hotendOptions = ["Hotend 1", "Hotend 2", "Hotend 3"];    //fetch folder names later
- 
+  var hotendOptions = [selectedCooling + " hotend 1", selectedCooling + " hotend 2", selectedCooling + " hotend 3"];   //fetch folder names later
+
+  hotendDropdown.length = 1;
   hotendOptions.forEach(function (option) {
     var hotendOption = document.createElement("option");
     hotendOption.text = option;
@@ -12,31 +30,35 @@ function loadHotends() {
 
 }
 
-function loadExtruders() {
+function loadextruders() {
+  var coolingDropdown = document.getElementById("coolingDropdown");
   var hotendDropdown = document.getElementById("hotendDropdown");
   var extruderDropdown = document.getElementById("extruderDropdown");
-
+  
+  
+  var selectedCooling = coolingDropdown.value;
   var selectedHotend = hotendDropdown.value;
-
-  var extruderOptions = [selectedHotend + " Extruder 1", selectedHotend + " Extruder 2", selectedHotend + " Extruder 3"];   //fetch folder names later
-
+  var extruderOptions = [selectedCooling + selectedHotend + " extruder 1", selectedCooling + selectedHotend + " extruder 2", selectedCooling + selectedHotend + " extruder 3"];   //fetch folder names later
+  
   extruderDropdown.length = 1;
   extruderOptions.forEach(function (option) {
     var extruderOption = document.createElement("option");
     extruderOption.text = option;
     extruderDropdown.add(extruderOption);
-  });
+	});
 
 }
 
 function loadProbes() {
+  var coolingDropdown = document.getElementById("coolingDropdown");
   var hotendDropdown = document.getElementById("hotendDropdown");
   var extruderDropdown = document.getElementById("extruderDropdown");
   var probeDropdown = document.getElementById("probeDropdown");
   
+  var selectedCooling = coolingDropdown.value;
   var selectedHotend = hotendDropdown.value;
   var selectedExtruder = extruderDropdown.value;
-  var extruderOptions = [selectedHotend + selectedExtruder + " Probe 1", selectedHotend + selectedExtruder + " Probe 2", selectedHotend + selectedExtruder + " Probe 3"];   //fetch folder names later
+  var probeOptions = [selectedCooling + selectedHotend + selectedExtruder + " Probe 1", selectedCooling + selectedHotend + selectedExtruder + " Probe 2", selectedCooling + selectedHotend + selectedExtruder + " Probe 3"];   //fetch folder names later
   
   probeDropdown.length = 1;
   probeOptions.forEach(function (option) {
@@ -46,5 +68,6 @@ function loadProbes() {
 	});
 
 }
-  // Make an API call or fetch data from the "probes" folder based on the selected extruder
-  // Populate
+
+function readNames() {
+}

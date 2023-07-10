@@ -1,4 +1,8 @@
-<select id="hotendDropdown" onchange="loadExtruders()">
+<select id="coolingDropdown" onchange="loadCooling()">
+  <option value="">Select cooling type</option>
+</select>
+
+<select id="hotendDropdown" onchange="loadExtruders()" disabled>
   <option value="">Select Hotend</option>
 </select>
 

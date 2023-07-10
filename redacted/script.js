@@ -43,5 +43,8 @@ function loadProbes() {
     var probeOption = document.createElement("option");
     probeOption.text = option;
     probeDropdown.add(probeOption);
+	});
+
+}
   // Make an API call or fetch data from the "probes" folder based on the selected extruder
   // Populate

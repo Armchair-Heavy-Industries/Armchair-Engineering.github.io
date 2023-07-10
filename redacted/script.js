@@ -3,7 +3,7 @@
 function loadCooling() {
   var coolingDropdown = document.getElementById("coolingDropdown");
 
-  var coolingOptions = ["cooling 1", "cooling 2", "cooling 3"];    //fetch folder names later
+  var coolingOptions = ["cooling 1", "cooling 2", "cooling 3"];    //fetch folder names later using readNames function
  
   coolingOptions.forEach(function (option) {
     var coolingOption = document.createElement("option");
@@ -18,8 +18,7 @@ function loadHotends() {
   var hotendDropdown = document.getElementById("hotendDropdown");
 
   var selectedCooling = coolingDropdown.value;
-
-  var hotendOptions = [selectedCooling + " hotend 1", selectedCooling + " hotend 2", selectedCooling + " hotend 3"];   //fetch folder names later
+  var hotendOptions = [selectedCooling + " hotend 1", selectedCooling + " hotend 2", selectedCooling + " hotend 3"];   //fetch folder names using later readNames function
 
   hotendDropdown.length = 1;
   hotendOptions.forEach(function (option) {
@@ -38,7 +37,7 @@ function loadextruders() {
   
   var selectedCooling = coolingDropdown.value;
   var selectedHotend = hotendDropdown.value;
-  var extruderOptions = [selectedCooling + selectedHotend + " extruder 1", selectedCooling + selectedHotend + " extruder 2", selectedCooling + selectedHotend + " extruder 3"];   //fetch folder names later
+  var extruderOptions = [selectedCooling + selectedHotend + " extruder 1", selectedCooling + selectedHotend + " extruder 2", selectedCooling + selectedHotend + " extruder 3"];   //fetch folder names later using readNames function
   
   extruderDropdown.length = 1;
   extruderOptions.forEach(function (option) {
@@ -58,7 +57,7 @@ function loadProbes() {
   var selectedCooling = coolingDropdown.value;
   var selectedHotend = hotendDropdown.value;
   var selectedExtruder = extruderDropdown.value;
-  var probeOptions = [selectedCooling + selectedHotend + selectedExtruder + " Probe 1", selectedCooling + selectedHotend + selectedExtruder + " Probe 2", selectedCooling + selectedHotend + selectedExtruder + " Probe 3"];   //fetch folder names later
+  var probeOptions = [selectedCooling + selectedHotend + selectedExtruder + " Probe 1", selectedCooling + selectedHotend + selectedExtruder + " Probe 2", selectedCooling + selectedHotend + selectedExtruder + " Probe 3"];   //fetch folder names later using readNames function
   
   probeDropdown.length = 1;
   probeOptions.forEach(function (option) {

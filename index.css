@@ -4,11 +4,3 @@ body {
   padding: 0;
   background-color: #222;
 }
-body video#prexz {
-  z-index: -999;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  left: 0;
-  top: 0;
-}

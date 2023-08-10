@@ -1,6 +1,6 @@
 
 function loadCarriages() {
-  $.getJSON("config_data/carriages.json", populateCarriageDropdown);
+  $.getJSON("/redacted/config_data/carriages.json", populateCarriageDropdown);
 
 }
 function populateCarriageDropdown(carriageJson) {
@@ -24,7 +24,7 @@ function handle_carriage_change() {
   beltDropdown.disabled = false;
 }
 function loadBelts() {
-  $.getJSON("config_data/belts.json", populateBeltDropdown);
+  $.getJSON("/redacted/config_data/belts.json", populateBeltDropdown);
 }
 function populateBeltDropdown(beltJson) {
   var beltDropdown = document.getElementById("beltDropdown");
@@ -47,7 +47,7 @@ function handle_belt_change() {
   hotendDropdown.disabled = false;
 }
 function loadHotends() {
-  $.getJSON("config_data/hotends.json", populateHotendDropdown);
+  $.getJSON("/redacted/config_data/hotends.json", populateHotendDropdown);
 }
 function populateHotendDropdown(hotendJson) {
   var hotendDropdown = document.getElementById("hotendDropdown");
@@ -106,7 +106,7 @@ function filterDuctOptions() {
   }
 }
 function loadDucts() {
-  $.getJSON("config_data/ducts.json", populateDuctDropdown);
+  $.getJSON("/redacted/config_data/ducts.json", populateDuctDropdown);
 }
 function populateDuctDropdown(ductJson) {
   var ductDropdown = document.getElementById("ductDropdown");
@@ -148,7 +148,7 @@ function handle_faceplate_leds_change() {
   console.log("faceplate leds: " + window.currentOptions.faceplateLeds);
 }
 function loadExtruders() {
-  $.getJSON("config_data/extruders.json", populateExtruderDropdown);
+  $.getJSON("/redacted/config_data/extruders.json", populateExtruderDropdown);
 }
 function populateExtruderDropdown(extruderJson) {
   var extruderDropdown = document.getElementById("extruderDropdown");
@@ -204,7 +204,7 @@ function handle_microbowden_checkbox_change() {
 }
 
 function loadProbes() {
-  $.getJSON("config_data/probes.json", populateProbeDropdown);
+  $.getJSON("/redacted/config_data/probes.json", populateProbeDropdown);
 }
 
 function populateProbeDropdown(probeJson) {
@@ -228,7 +228,7 @@ function handle_probe_change() {
   toolheadBoardDropdown.disabled = false;
 }
 function loadToolheadBoards() {
-  $.getJSON("config_data/toolhead_boards.json", populateToolheadBoardDropdown);
+  $.getJSON("/redacted/config_data/toolhead_boards.json", populateToolheadBoardDropdown);
 }
 function populateToolheadBoardDropdown(toolheadBoardJson) {
   var toolheadBoardDropdown = document.getElementById("toolheadBoardDropdown");

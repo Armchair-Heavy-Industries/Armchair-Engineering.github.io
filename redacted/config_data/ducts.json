@@ -23,7 +23,7 @@
             }
         },
         "microbowden_only": true,
-        "probe_size_reduction": 0
+        "probe_length_adjust": 0
     },
     "Zephyr (sheet cooling)": {
         "lengths": {
@@ -49,7 +49,7 @@
             }
         },
         "microbowden_only": false,
-        "probe_size_reduction": 0
+        "probe_length_adjust": 0
     },
     "Atrocity": {
         "lengths": {
@@ -66,7 +66,7 @@
             }
         },
         "microbowden_only": false,
-        "probe_size_adjust": -1
+        "probe_length_adjust": -1
     },
     "Mantis": {
         "lengths": {
@@ -92,7 +92,7 @@
             }
         },
         "microbowden_only": false,
-        "probe_size_reduction": 0
+        "probe_length_adjust": 0
     },
     "Mjolnir": {
         "lengths": {
@@ -112,7 +112,7 @@
             }
         },
         "microbowden_only": false,
-        "probe_size_adjust": -1
+        "probe_length_adjust": -1
     },
     "Xol": {
         "lengths": {
@@ -135,6 +135,6 @@
             }
         },
         "microbowden_only": false,
-        "probe_size_reduction": 0
+        "probe_length_adjust": 0
     }
 }

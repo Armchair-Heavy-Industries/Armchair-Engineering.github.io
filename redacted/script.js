@@ -54,7 +54,7 @@ function populateHotendDropdown(hotendJson) {
   console.log(hotendJson);
   window.hotendData = hotendJson;
   for (let optionKey in hotendJson) {
-    option = hotendJson[optionKey]
+    var option = hotendJson[optionKey]
     var hotendOption = document.createElement("option");
     console.log(option)
     console.log(optionKey)
@@ -86,7 +86,7 @@ function filterDuctOptions() {
   if (uhf_spacer) {
     hotend_length += 1;
   }
-  ductDropdown = document.getElementById("ductDropdown");
+  var ductDropdown = document.getElementById("ductDropdown");
   for (i = 1; i < ductDropdown.length; i++) {
     var element = ductDropdown[i];
     var compatible = false;
@@ -113,7 +113,7 @@ function populateDuctDropdown(ductJson) {
   console.log(ductJson);
   window.ductData = ductJson;
   for (let optionKey in ductJson) {
-    option = ductJson[optionKey]
+    var option = ductJson[optionKey]
     var ductOption = document.createElement("option");
     console.log(option)
     ductOption.href = option.link;
@@ -155,7 +155,7 @@ function populateExtruderDropdown(extruderJson) {
   console.log(extruderJson);
   window.extruderData = extruderJson;
   for (let optionKey in extruderJson) {
-    option = extruderJson[optionKey]
+    var option = extruderJson[optionKey]
     var extruderOption = document.createElement("option");
     console.log(option)
     extruderOption.href = option.link;
@@ -212,7 +212,7 @@ function populateProbeDropdown(probeJson) {
   console.log(probeJson);
   window.probeData = probeJson;
   for (let optionKey in probeJson) {
-    option = probeJson[optionKey]
+    var option = probeJson[optionKey]
     var probeOption = document.createElement("option");
     console.log(option)
     probeOption.href = option.link;
@@ -221,10 +221,15 @@ function populateProbeDropdown(probeJson) {
   };
 }
 function handle_probe_change() {
-  selectedProbeName = document.getElementById("probeDropdown").value;
+  var selectedProbeName = document.getElementById("probeDropdown").value;
   window.probe = selectedProbeName
   console.log("selected probe name: " + selectedProbeName);
-  toolheadBoardDropdown = document.getElementById("toolheadBoardDropdown");
+  var hotend_length = window.hotendData[window.currentOptions.hotend].base_length;
+  var uhf_spacer_length = window.currentOptions.uhfSpacer ? 1 : 0;
+  var duct_probe_length_adjust = window.ductData[window.currentOptions.ducts].probe_length_adjust;
+  window.currentOptions.probeLength = hotend_length + uhf_spacer_length + duct_probe_length_adjust
+  console.log("probe length: " + window.currentOptions.probeLength);
+  var toolheadBoardDropdown = document.getElementById("toolheadBoardDropdown");
   toolheadBoardDropdown.disabled = false;
 }
 function loadToolheadBoards() {
@@ -235,7 +240,7 @@ function populateToolheadBoardDropdown(toolheadBoardJson) {
   console.log(toolheadBoardJson);
   window.toolheadBoardData = toolheadBoardJson;
   for (let optionKey in toolheadBoardJson) {
-    option = toolheadBoardJson[optionKey]
+    var option = toolheadBoardJson[optionKey]
     var toolheadBoardOption = document.createElement("option");
     console.log(option)
     toolheadBoardOption.href = option.link;
@@ -244,7 +249,7 @@ function populateToolheadBoardDropdown(toolheadBoardJson) {
   };
 }
 function handle_toolhead_board_change() {
-  selectedToolheadBoardName = document.getElementById("toolheadBoardDropdown").value;
+  var selectedToolheadBoardName = document.getElementById("toolheadBoardDropdown").value;
   window.toolheadBoard = selectedToolheadBoardName
   console.log("selected toolhead board name: " + selectedToolheadBoardName);
   console.log("all selected!");

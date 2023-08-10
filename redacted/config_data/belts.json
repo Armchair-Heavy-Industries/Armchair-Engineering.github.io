@@ -1,0 +1,14 @@
+{
+    "6mm": {
+        "link": "6mm_clip_tight.stl"
+    },
+    "6mm EPDM": {
+        "link": "9mm_clip_loose.stl"
+    },
+    "9mm": {
+        "link": "6mm_clip_tight.stl"
+    },
+    "9mm EPDM": {
+        "link": "6mm_clip_loose.stl"
+    }
+}

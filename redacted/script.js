@@ -1,72 +1,279 @@
 
-
-function loadCooling() {
-  var coolingDropdown = document.getElementById("coolingDropdown");
-
-  var coolingOptions = ["cooling 1", "cooling 2", "cooling 3"];    //fetch folder names later using readNames function
- 
-  coolingOptions.forEach(function (option) {
-    var coolingOption = document.createElement("option");
-    coolingOption.text = option;
-    coolingDropdown.add(coolingOption);
-  });
+function loadCarriages() {
+  $.getJSON("config_data/carriages.json", populateCarriageDropdown);
 
 }
-
+function populateCarriageDropdown(carriageJson) {
+  console.log(carriageJson);
+  window.carriageData = carriageJson;
+  var carriageDropdown = document.getElementById("carriageDropdown");
+  for (let optionKey in carriageJson) {
+    var option = carriageJson[optionKey]
+    var carriageOption = document.createElement("option");
+    console.log(option)
+    carriageOption.href = option.link;
+    carriageOption.text = optionKey;
+    carriageDropdown.add(carriageOption);
+  };
+}
+function handle_carriage_change() {
+  var selectedCarriageName = document.getElementById("carriageDropdown").value;
+  window.currentOptions.carriage = selectedCarriageName
+  console.log("selected carriage name: " + selectedCarriageName);
+  var beltDropdown = document.getElementById("beltDropdown");
+  beltDropdown.disabled = false;
+}
+function loadBelts() {
+  $.getJSON("config_data/belts.json", populateBeltDropdown);
+}
+function populateBeltDropdown(beltJson) {
+  var beltDropdown = document.getElementById("beltDropdown");
+  console.log(beltJson);
+  window.beltData = beltJson;
+  for (let optionKey in beltJson) {
+    var option = beltJson[optionKey]
+    var beltOption = document.createElement("option");
+    console.log(option)
+    beltOption.href = option.link;
+    beltOption.text = optionKey;
+    beltDropdown.add(beltOption);
+  };
+}
+function handle_belt_change() {
+  var selectedBelt = document.getElementById("beltDropdown").value;
+  window.currentOptions.belt = selectedBelt
+  console.log("selected belt name: " + selectedBelt);
+  var hotendDropdown = document.getElementById("hotendDropdown");
+  hotendDropdown.disabled = false;
+}
 function loadHotends() {
-  var coolingDropdown = document.getElementById("coolingDropdown");
+  $.getJSON("config_data/hotends.json", populateHotendDropdown);
+}
+function populateHotendDropdown(hotendJson) {
   var hotendDropdown = document.getElementById("hotendDropdown");
-
-  var selectedCooling = coolingDropdown.value;
-  var hotendOptions = [selectedCooling + " hotend 1", selectedCooling + " hotend 2", selectedCooling + " hotend 3"];   //fetch folder names using later readNames function
-
-  hotendDropdown.length = 1;
-  hotendOptions.forEach(function (option) {
+  console.log(hotendJson);
+  window.hotendData = hotendJson;
+  for (let optionKey in hotendJson) {
+    option = hotendJson[optionKey]
     var hotendOption = document.createElement("option");
-    hotendOption.text = option;
+    console.log(option)
+    console.log(optionKey)
+    hotendOption.href = option.link;
+    hotendOption.text = optionKey;
     hotendDropdown.add(hotendOption);
-  });
-
+  };
+}
+function handle_hotend_change() {
+  var selectedHotendName = document.getElementById("hotendDropdown").value;
+  window.currentOptions.hotend = selectedHotendName
+  console.log("selected hotend name: " + selectedHotendName);
+  var uhfSpacerCheckBox = document.getElementById("uhfSpacerCheckbox");
+  uhfSpacerCheckBox.disabled = false;
+  var ductDropdown = document.getElementById("ductDropdown");
+  ductDropdown.disabled = false;
+  filterDuctOptions();
 }
 
-function loadextruders() {
-  var coolingDropdown = document.getElementById("coolingDropdown");
-  var hotendDropdown = document.getElementById("hotendDropdown");
+function handle_uhf_spacer_change() {
+  var uhfSpacerCheckBox = document.getElementById("uhfSpacerCheckbox");
+  window.currentOptions.uhfSpacer = uhfSpacerCheckBox.checked;
+  handle_hotend_change();
+}
+function filterDuctOptions() {
+  var hotend = window.currentOptions.hotend;
+  var hotend_length = window.hotendData[hotend].base_length;
+  var uhf_spacer = window.currentOptions.uhfSpacer;
+  if (uhf_spacer) {
+    hotend_length += 1;
+  }
+  ductDropdown = document.getElementById("ductDropdown");
+  for (i = 1; i < ductDropdown.length; i++) {
+    var element = ductDropdown[i];
+    var compatible = false;
+    var duct_data = window.ductData[element.text];
+    for (let duct_length in duct_data.lengths) {
+      if (duct_length == hotend_length.toString()) {
+        compatible = true;
+        break;
+      }
+    }
+    if (!compatible) {
+      element.disabled = true;
+    }
+    else {
+      element.disabled = false;
+    }
+  }
+}
+function loadDucts() {
+  $.getJSON("config_data/ducts.json", populateDuctDropdown);
+}
+function populateDuctDropdown(ductJson) {
+  var ductDropdown = document.getElementById("ductDropdown");
+  console.log(ductJson);
+  window.ductData = ductJson;
+  for (let optionKey in ductJson) {
+    option = ductJson[optionKey]
+    var ductOption = document.createElement("option");
+    console.log(option)
+    ductOption.href = option.link;
+    ductOption.text = optionKey;
+    ductDropdown.add(ductOption);
+  };
+}
+function handle_duct_change() {
+  var selectedDuctName = document.getElementById("ductDropdown").value;
+  window.currentOptions.ducts = selectedDuctName
+  var duct = window.ductData[selectedDuctName];
+  var microbowdenCheckbox = document.getElementById("microbowdenCheckbox");
+  if (duct.microbowden_only == true) {
+    microbowdenCheckbox.disabled = true;
+    microbowdenCheckbox.checked = true;
+  }
+  // un-disable the checkbox, only if we have an extruder selected
+  else if (window.currentOptions.extruder != undefined) {
+    microbowdenCheckbox.disabled = false;
+  }
+  var faceplateLEDsCheckbox = document.getElementById("facePlateLEDsCheckbox");
+  faceplateLEDsCheckbox.disabled = false;
+  console.log("selected duct name: " + selectedDuctName);
   var extruderDropdown = document.getElementById("extruderDropdown");
-  
-  
-  var selectedCooling = coolingDropdown.value;
-  var selectedHotend = hotendDropdown.value;
-  var extruderOptions = [selectedCooling + selectedHotend + " extruder 1", selectedCooling + selectedHotend + " extruder 2", selectedCooling + selectedHotend + " extruder 3"];   //fetch folder names later using readNames function
-  
-  extruderDropdown.length = 1;
-  extruderOptions.forEach(function (option) {
-    var extruderOption = document.createElement("option");
-    extruderOption.text = option;
-    extruderDropdown.add(extruderOption);
-	});
+  extruderDropdown.disabled = false;
 
+
+}
+function handle_faceplate_leds_change() {
+  var faceplate_leds_checkbox = document.getElementById("facePlateLEDsCheckbox");
+  window.currentOptions.faceplateLeds = faceplate_leds_checkbox.checked;
+  console.log("faceplate leds: " + window.currentOptions.faceplateLeds);
+}
+function loadExtruders() {
+  $.getJSON("config_data/extruders.json", populateExtruderDropdown);
+}
+function populateExtruderDropdown(extruderJson) {
+  var extruderDropdown = document.getElementById("extruderDropdown");
+  console.log(extruderJson);
+  window.extruderData = extruderJson;
+  for (let optionKey in extruderJson) {
+    option = extruderJson[optionKey]
+    var extruderOption = document.createElement("option");
+    console.log(option)
+    extruderOption.href = option.link;
+    extruderOption.text = optionKey;
+    extruderDropdown.add(extruderOption);
+  };
+}
+function handle_extruder_change() {
+  var selectedExtruderName = document.getElementById("extruderDropdown").value;
+  window.currentOptions.extruder = selectedExtruderName
+  var selectedDuctName = document.getElementById("ductDropdown").value;
+  var duct = window.ductData[selectedDuctName];
+  console.log("selected extruder name: " + selectedExtruderName);
+  if (duct.microbowden_only == true) {
+    microbowdenCheckbox.disabled = true;
+    microbowdenCheckbox.checked = true;
+    handle_microbowden_checkbox_change();
+  }
+  else {
+    microbowdenCheckbox.disabled = false;
+  }
+  var probeDropdown = document.getElementById("probeDropdown");
+  probeDropdown.disabled = false;
+}
+function handle_microbowden_checkbox_change() {
+  var microbowdenCheckbox = document.getElementById("microbowdenCheckbox");
+  var microbowdenEnabled = microbowdenCheckbox.checked;
+  window.currentOptions.microbowden = microbowdenEnabled;
+  console.log("microbowden: " + window.currentOptions.microbowden);
+  var extruderDropdown = document.getElementById("extruderDropdown");
+  for (i = 1; i < extruderDropdown.options.length; i++) {
+    var extruderName = extruderDropdown.options[i].text;
+    console.log("extruder name: " + extruderName);
+    var extruderData = window.extruderData[extruderName];
+    var plate_name = microbowdenEnabled ? "microbowden" : "direct"
+    if (extruderData.plates[plate_name].link == null) {
+      if (extruderDropdown.options[i].selected) {
+        extruderDropdown.selectedIndex = 0;
+      }
+      extruderDropdown.options[i].disabled = true;
+    }
+    else {
+      extruderDropdown.options[i].disabled = false;
+    }
+  }
 }
 
 function loadProbes() {
-  var coolingDropdown = document.getElementById("coolingDropdown");
-  var hotendDropdown = document.getElementById("hotendDropdown");
-  var extruderDropdown = document.getElementById("extruderDropdown");
-  var probeDropdown = document.getElementById("probeDropdown");
-  
-  var selectedCooling = coolingDropdown.value;
-  var selectedHotend = hotendDropdown.value;
-  var selectedExtruder = extruderDropdown.value;
-  var probeOptions = [selectedCooling + selectedHotend + selectedExtruder + " Probe 1", selectedCooling + selectedHotend + selectedExtruder + " Probe 2", selectedCooling + selectedHotend + selectedExtruder + " Probe 3"];   //fetch folder names later using readNames function
-  
-  probeDropdown.length = 1;
-  probeOptions.forEach(function (option) {
-    var probeOption = document.createElement("option");
-    probeOption.text = option;
-    probeDropdown.add(probeOption);
-	});
-
+  $.getJSON("config_data/probes.json", populateProbeDropdown);
 }
 
+function populateProbeDropdown(probeJson) {
+  var probeDropdown = document.getElementById("probeDropdown");
+  console.log(probeJson);
+  window.probeData = probeJson;
+  for (let optionKey in probeJson) {
+    option = probeJson[optionKey]
+    var probeOption = document.createElement("option");
+    console.log(option)
+    probeOption.href = option.link;
+    probeOption.text = optionKey;
+    probeDropdown.add(probeOption);
+  };
+}
+function handle_probe_change() {
+  selectedProbeName = document.getElementById("probeDropdown").value;
+  window.probe = selectedProbeName
+  console.log("selected probe name: " + selectedProbeName);
+  toolheadBoardDropdown = document.getElementById("toolheadBoardDropdown");
+  toolheadBoardDropdown.disabled = false;
+}
+function loadToolheadBoards() {
+  $.getJSON("config_data/toolhead_boards.json", populateToolheadBoardDropdown);
+}
+function populateToolheadBoardDropdown(toolheadBoardJson) {
+  var toolheadBoardDropdown = document.getElementById("toolheadBoardDropdown");
+  console.log(toolheadBoardJson);
+  window.toolheadBoardData = toolheadBoardJson;
+  for (let optionKey in toolheadBoardJson) {
+    option = toolheadBoardJson[optionKey]
+    var toolheadBoardOption = document.createElement("option");
+    console.log(option)
+    toolheadBoardOption.href = option.link;
+    toolheadBoardOption.text = optionKey;
+    toolheadBoardDropdown.add(toolheadBoardOption);
+  };
+}
+function handle_toolhead_board_change() {
+  selectedToolheadBoardName = document.getElementById("toolheadBoardDropdown").value;
+  window.toolheadBoard = selectedToolheadBoardName
+  console.log("selected toolhead board name: " + selectedToolheadBoardName);
+  console.log("all selected!");
+}
 function readNames() {
 }
+function loadAllData() {
+  loadCarriages();
+  loadBelts();
+  loadHotends();
+  loadDucts();
+  loadExtruders();
+  loadProbes();
+  loadToolheadBoards();
+  window.currentOptions = {
+    carriage: undefined,
+    belt: undefined,
+    hotend: undefined,
+    uhfSpacer: undefined,
+    ducts: undefined,
+    faceplateLeds: undefined,
+    extruder: undefined,
+    microbowden: undefined,
+    probe: undefined,
+    toolheadBoard: undefined,
+  }
+}
+function init() {
+  loadAllData();
+  // populateDropdowns();
+}
+

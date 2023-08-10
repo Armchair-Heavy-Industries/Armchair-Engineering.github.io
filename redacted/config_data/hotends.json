@@ -1,0 +1,42 @@
+{
+    "Rapido/Dragon UHF": {
+        "base_length": 1,
+        "link": ""
+    },
+    "Mosquito/NF crazy": {
+        "base_length": 0,
+        "link": ""
+    },
+    "Dragon HF/SF": {
+        "base_length": 1,
+        "link": ""
+    },
+    "VolcMosq": {
+        "base_length": 1,
+        "link": ""
+    },
+    "Revo": {
+        "base_length": 0,
+        "link": ""
+    },
+    "Dragon NextG": {
+        "base_length": 0,
+        "link": ""
+    },
+    "DropEffect XG": {
+        "base_length": 0,
+        "link": ""
+    },
+    "NextG": {
+        "base_length": 0,
+        "link": ""
+    },
+    "Goliath": {
+        "base_length": 3,
+        "link": ""
+    },
+    "Waterheater": {
+        "base_length": 3,
+        "link": ""
+    }
+}

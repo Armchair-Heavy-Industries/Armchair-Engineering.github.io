@@ -1,0 +1,66 @@
+{
+    "Beacon": {
+        "lengths": {
+            "0": {
+                "link": "beacon_probe_0.stl"
+            },
+            "1": {
+                "link": "beacon_probe_1.stl"
+            },
+            "2": {
+                "link": "beacon_probe_2.stl"
+            },
+            "3": {
+                "link": "beacon_probe_3.stl"
+            }
+        }
+    },
+    "PCBKlicky": {
+        "lengths": {
+            "0": {
+                "link": "pcb_klicky_probe_0.stl"
+            },
+            "1": {
+                "link": "pcb_klicky_probe_1.stl"
+            },
+            "2": {
+                "link": "pcb_klicky_probe_2.stl"
+            },
+            "3": {
+                "link": "pcb_klicky_probe_3.stl"
+            }
+        }
+    },
+    "Klicky/Unklicky": {
+        "lengths": {
+            "0": {
+                "link": "klicky_probe_0.stl"
+            },
+            "1": {
+                "link": "klicky_probe_1.stl"
+            },
+            "2": {
+                "link": "klicky_probe_2.stl"
+            },
+            "3": {
+                "link": "klicky_probe_3.stl"
+            }
+        }
+    },
+    "Euclid": {
+        "lengths": {
+            "0": {
+                "link": "euclid_probe_0.stl"
+            },
+            "1": {
+                "link": "euclid_probe_1.stl"
+            },
+            "2": {
+                "link": "euclid_probe_2.stl"
+            },
+            "3": {
+                "link": "euclid_probe_3.stl"
+            }
+        }
+    }
+}

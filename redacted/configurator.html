@@ -1,15 +1,39 @@
-<select id="coolingDropdown" onchange="loadCooling()">
-  <option value="">Select cooling type</option>
-</select>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="configurator.js"></script>
+</head>
 
-<select id="hotendDropdown" onchange="loadExtruders()" disabled>
-  <option value="">Select Hotend</option>
-</select>
-
-<select id="extruderDropdown" onchange="loadProbes()" disabled>
-  <option value="">Select Extruder</option>
-</select>
-
-<select id="probeDropdown" disabled>
-  <option value="">Select Probe</option>
-</select>
+<body onload="init()">
+  <select id="carriageDropdown" onchange="handle_carriage_change()">
+    <option disabled selected value="">Select Carriage</option>
+  </select>
+  <br />
+  <select id="beltDropdown" onchange="handle_belt_change()" disabled>
+    <option disabled selected value="">Select Belt Clip Type</option>
+  </select>
+  <br />
+  <select id="hotendDropdown" onchange="handle_hotend_change()" disabled>
+    <option disabled selected value="">Select Hotend</option>
+  </select>
+  <input type="checkbox" id="uhfSpacerCheckbox" onchange="handle_uhf_spacer_change()" disabled />UHF Spacer?
+  <br />
+  <select id="ductDropdown" onchange="handle_duct_change()" disabled>
+    <option disabled selected value="">Select Duct</option>
+  </select>
+  <input type="checkbox" id="facePlateLEDsCheckbox" onchange="handle_faceplate_leds_change()" disabled />Faceplate
+  LEDS?
+  <br />
+  <select id="extruderDropdown" onchange="handle_extruder_change()" disabled>
+    <option disabled selected value="">Select Extruder</option>
+  </select>
+  <input type="checkbox" id="microbowdenCheckbox" onchange="handle_microbowden_checkbox_change()" disabled
+    checked />Microbowden?
+  <br />
+  <select id="probeDropdown" onchange="handle_probe_change()" disabled>
+    <option disabled selected value="">Select Probe</option>
+  </select>
+  <br />
+  <select id="toolheadBoardDropdown" onchange="handle_toolhead_board_change()" disabled>
+    <option disabled selected value="">Select Toolhead Board</option>
+  </select>
+</body>

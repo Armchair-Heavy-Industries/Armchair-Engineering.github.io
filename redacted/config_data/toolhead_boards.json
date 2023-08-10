@@ -1,0 +1,104 @@
+{
+    "EBB36": {
+        "Sherpa micro": {
+            "microbowden": {
+                "link": "ebb36_sherpa_micro_mount.stl"
+            },
+            "direct": {
+                "link": null
+            }
+        },
+        "Vz-Hextrudort-Low": {
+            "microbowden": {
+                "link": "ebb36_vzhextrudort_low_mount.stl"
+            },
+            "direct": {
+                "link": "ebb36_vzhextrudort_low_mount.stl"
+            }
+        },
+        "Kyro": {
+            "microbowden": {
+                "link": "ebb36_kyro_mount.stl"
+            },
+            "direct": {
+                "link": "ebb36_kyro_mount.stl"
+            }
+        },
+        "Escapement": {
+            "microbowden": {
+                "link": "ebb36_escapement_mount.stl"
+            },
+            "direct": {
+                "link": "ebb36_escapement_mount.stl"
+            }
+        }
+    },
+    "SHT36": {
+        "Sherpa micro": {
+            "microbowden": {
+                "link": "ebb36_sherpa_micro_mount.stl"
+            },
+            "direct": {
+                "link": null
+            }
+        },
+        "Vz-Hextrudort-Low": {
+            "microbowden": {
+                "link": "ebb36_vzhextrudort_low_mount.stl"
+            },
+            "direct": {
+                "link": "ebb36_vzhextrudort_low_mount.stl"
+            }
+        },
+        "Kyro": {
+            "microbowden": {
+                "link": "ebb36_kyro_mount.stl"
+            },
+            "direct": {
+                "link": "ebb36_kyro_mount.stl"
+            }
+        },
+        "Escapement": {
+            "microbowden": {
+                "link": "ebb36_escapement_mount.stl"
+            },
+            "direct": {
+                "link": "ebb36_escapement_mount.stl"
+            }
+        }
+    },
+    "Karabiner": {
+        "Sherpa micro": {
+            "microbowden": {
+                "link": "ebb36_sherpa_micro_mount.stl"
+            },
+            "direct": {
+                "link": null
+            }
+        },
+        "Vz-Hextrudort-Low": {
+            "microbowden": {
+                "link": "ebb36_vzhextrudort_low_mount.stl"
+            },
+            "direct": {
+                "link": "ebb36_vzhextrudort_low_mount.stl"
+            }
+        },
+        "Kyro": {
+            "microbowden": {
+                "link": "ebb36_kyro_mount.stl"
+            },
+            "direct": {
+                "link": "ebb36_kyro_mount.stl"
+            }
+        },
+        "Escapement": {
+            "microbowden": {
+                "link": "ebb36_escapement_mount.stl"
+            },
+            "direct": {
+                "link": "ebb36_escapement_mount.stl"
+            }
+        }
+    }
+}

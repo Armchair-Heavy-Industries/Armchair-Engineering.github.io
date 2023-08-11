@@ -96,10 +96,10 @@
     },
     "Mjolnir": {
         "lengths": {
-            "1": {
+            "2": {
                 "link": "mjolnir_duct_1.stl"
             },
-            "2": {
+            "3": {
                 "link": "mjolnir_duct_2.stl"
             }
         },

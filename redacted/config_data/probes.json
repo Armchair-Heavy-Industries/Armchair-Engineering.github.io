@@ -1,66 +1,22 @@
-{
-    "Beacon": {
-        "lengths": {
-            "0": {
-                "link": "beacon_probe_0.stl"
-            },
-            "1": {
-                "link": "beacon_probe_1.stl"
-            },
-            "2": {
-                "link": "beacon_probe_2.stl"
-            },
-            "3": {
-                "link": "beacon_probe_3.stl"
-            }
-        }
+[
+    {
+        "name": "Beacon",
+        "internal_value": "beacon",
+        "lengths": [0, 1, 2, 3]
     },
-    "PCBKlicky": {
-        "lengths": {
-            "0": {
-                "link": "pcb_klicky_probe_0.stl"
-            },
-            "1": {
-                "link": "pcb_klicky_probe_1.stl"
-            },
-            "2": {
-                "link": "pcb_klicky_probe_2.stl"
-            },
-            "3": {
-                "link": "pcb_klicky_probe_3.stl"
-            }
-        }
+    {
+        "name": "PCB Klicky",
+        "internal_value": "pcbklicky",
+        "lengths": [0, 1, 2, 3]
     },
-    "Klicky/Unklicky": {
-        "lengths": {
-            "0": {
-                "link": "klicky_probe_0.stl"
-            },
-            "1": {
-                "link": "klicky_probe_1.stl"
-            },
-            "2": {
-                "link": "klicky_probe_2.stl"
-            },
-            "3": {
-                "link": "klicky_probe_3.stl"
-            }
-        }
+    {
+        "name": "Klicky / Unklicky",
+        "internal_value": "klicky_unklicky",
+        "lengths": [0, 1, 2, 3]
     },
-    "Euclid": {
-        "lengths": {
-            "0": {
-                "link": "euclid_probe_0.stl"
-            },
-            "1": {
-                "link": "euclid_probe_1.stl"
-            },
-            "2": {
-                "link": "euclid_probe_2.stl"
-            },
-            "3": {
-                "link": "euclid_probe_3.stl"
-            }
-        }
+    {
+        "name": "Euclid",
+        "internal_value": "euclid",
+        "lengths": [0, 1, 2, 3]
     }
-}
+]

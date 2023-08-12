@@ -1,42 +1,52 @@
-{
-    "Rapido/Dragon UHF": {
-        "base_length": 1,
-        "link": ""
+[
+    {
+        "name": "Rapido/Dragon UHF",
+        "internal_value": "rapido_dragon_uhf",
+        "base_length": 1
     },
-    "Mosquito/NF crazy": {
-        "base_length": 0,
-        "link": ""
+    {
+        "name": "Mosquito/NF crazy",
+        "internal_value": "mosquito_nf_crazy",
+        "base_length": 0
     },
-    "Dragon HF/SF": {
-        "base_length": 1,
-        "link": ""
+    {
+        "name": "Dragon HF/SF",
+        "internal_value": "dragon_standard",
+        "base_length": 1
     },
-    "VolcMosq": {
-        "base_length": 1,
-        "link": ""
+    {
+        "name": "VolcMosq",
+        "internal_value": "volcmosq",
+        "base_length": 1
     },
-    "Revo": {
-        "base_length": 0,
-        "link": ""
+    {
+        "name": "Revo",
+        "internal_value": "revo",
+        "base_length": 0
     },
-    "Dragon NextG": {
-        "base_length": 0,
-        "link": ""
+    {
+        "name": "Dragon NextG",
+        "internal_value": "dragon_nextg",
+        "base_length": 0
     },
-    "DropEffect XG": {
-        "base_length": 0,
-        "link": ""
+    {
+        "name": "DropEffect XG",
+        "internal_value": "dropeffect_xg",
+        "base_length": 0
     },
-    "NextG": {
-        "base_length": 0,
-        "link": ""
+    {
+        "name": "NextG",
+        "internal_value": "nextg",
+        "base_length": 0
     },
-    "Goliath": {
-        "base_length": 3,
-        "link": ""
+    {
+        "name": "Goliath",
+        "internal_value": "goliath",
+        "base_length": 3
     },
-    "Waterheater": {
-        "base_length": 3,
-        "link": ""
+    {
+        "name": "Waterheater",
+        "internal_value": "waterheater",
+        "base_length": 3
     }
-}
+]

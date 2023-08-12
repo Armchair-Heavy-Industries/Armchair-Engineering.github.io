@@ -1,8 +1,10 @@
-{
-    "MGN9H": {
-        "link": "mgn9h_carriage.stl"
+[
+    {
+        "name": "MGN9H",
+        "internal_value": "mgn9h"
     },
-    "MGN12H": {
-        "link": "mgn12h_carriage.stl"
+    {
+        "name": "MGN12H",
+        "internal_value": "mgn12h"
     }
-}
+]

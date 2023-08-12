@@ -1,140 +1,44 @@
-{
-    "Breakneck (CPAP)": {
-        "lengths": {
-            "0": {
-                "link": "breakneck_cpap_duct_0.stl"
-            },
-            "1": {
-                "link": "breakneck_cpap_duct_1.stl"
-            },
-            "2": {
-                "link": "breakneck_cpap_duct_2.stl"
-            },
-            "3": {
-                "link": "breakneck_cpap_duct_3.stl"
-            }
+[
+        {
+            "name": "Breakneck (CPAP)",
+            "internal_value": "breakneck",
+            "lengths": [0, 1, 2, 3],
+            "microbowden_only": true,
+            "probe_length_adjust": 0
         },
-        "faceplates": {
-            "led": {
-                "link": "breakneck_cpap_duct_led_faceplate.stl"
-            },
-            "no_led": {
-                "link": "breakneck_cpap_duct_no_led_faceplate.stl"
-            }
+        {
+            "name": "Zephyr (sheet cooling)",
+            "internal_value": "zephyr",
+            "lengths": [0, 1, 2, 3],
+            "microbowden_only": false,
+            "probe_length_adjust": 0
         },
-        "microbowden_only": true,
-        "probe_length_adjust": 0
-    },
-    "Zephyr (sheet cooling)": {
-        "lengths": {
-            "0": {
-                "link": "zephyr_duct_0.stl"
-            },
-            "1": {
-                "link": "zephyr_duct_1.stl"
-            },
-            "2": {
-                "link": "zephyr_duct_2.stl"
-            },
-            "3": {
-                "link": "zephyr_duct_3.stl"
-            }
+        {
+            "name": "Atrocity",
+            "internal_value": "atrocity",
+            "lengths": [3],
+            "microbowden_only": false,
+            "probe_length_adjust": -1
         },
-        "faceplates": {
-            "led": {
-                "link": "zephyr_duct_led_faceplate.stl"
-            },
-            "no_led": {
-                "link": "zephyr_duct_no_led_faceplate.stl"
-            }
+        {
+            "name": "Mantis",
+            "internal_value": "mantis",
+            "lengths": [0, 1, 2, 3],
+            "microbowden_only": false,
+            "probe_length_adjust": 0
         },
-        "microbowden_only": false,
-        "probe_length_adjust": 0
-    },
-    "Atrocity": {
-        "lengths": {
-            "3": {
-                "link": "atrocity_duct_3.stl"
-            }
+        {
+            "name": "Mjolnir",
+            "internal_value": "mjolnir",
+            "lengths": [2, 3],
+            "microbowden_only": false,
+            "probe_length_adjust": -1
         },
-        "faceplates": {
-            "led": {
-                "link": "atrocity_duct_led_faceplate.stl"
-            },
-            "no_led": {
-                "link": "atrocity_duct_no_led_faceplate.stl"
-            }
-        },
-        "microbowden_only": false,
-        "probe_length_adjust": -1
-    },
-    "Mantis": {
-        "lengths": {
-            "0": {
-                "link": "mantis_duct_0.stl"
-            },
-            "1": {
-                "link": "mantis_duct_1.stl"
-            },
-            "2": {
-                "link": "mantis_duct_2.stl"
-            },
-            "3": {
-                "link": "mantis_duct_3.stl"
-            }
-        },
-        "faceplates": {
-            "led": {
-                "link": "mantis_duct_led_faceplate.stl"
-            },
-            "no_led": {
-                "link": "mantis_duct_no_led_faceplate.stl"
-            }
-        },
-        "microbowden_only": false,
-        "probe_length_adjust": 0
-    },
-    "Mjolnir": {
-        "lengths": {
-            "2": {
-                "link": "mjolnir_duct_1.stl"
-            },
-            "3": {
-                "link": "mjolnir_duct_2.stl"
-            }
-        },
-        "faceplates": {
-            "led": {
-                "link": "mjolnir_duct_led_faceplate.stl"
-            },
-            "no_led": {
-                "link": "mjolnir_duct_no_led_faceplate.stl"
-            }
-        },
-        "microbowden_only": false,
-        "probe_length_adjust": -1
-    },
-    "Xol": {
-        "lengths": {
-            "0": {
-                "link": "xol_duct_0.stl"
-            },
-            "1": {
-                "link": "xol_duct_1.stl"
-            },
-            "2": {
-                "link": "xol_duct_2.stl"
-            }
-        },
-        "faceplates": {
-            "led": {
-                "link": "xol_duct_led_faceplate.stl"
-            },
-            "no_led": {
-                "link": "xol_duct_no_led_faceplate.stl"
-            }
-        },
-        "microbowden_only": false,
-        "probe_length_adjust": 0
-    }
-}
+        {
+            "name": "Xol",
+            "internal_value": "xol",
+            "lengths": [0, 1, 2],
+            "microbowden_only": false,
+            "probe_length_adjust": 0
+        }
+]

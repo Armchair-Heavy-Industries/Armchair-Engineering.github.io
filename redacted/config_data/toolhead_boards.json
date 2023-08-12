@@ -1,104 +1,32 @@
-{
-    "EBB36": {
-        "Sherpa micro": {
-            "microbowden": {
-                "link": "ebb36_sherpa_micro_mount.stl"
-            },
-            "direct": {
-                "link": null
-            }
-        },
-        "Vz-Hextrudort-Low": {
-            "microbowden": {
-                "link": "ebb36_vzhextrudort_low_mount.stl"
-            },
-            "direct": {
-                "link": "ebb36_vzhextrudort_low_mount.stl"
-            }
-        },
-        "Kyro": {
-            "microbowden": {
-                "link": "ebb36_kyro_mount.stl"
-            },
-            "direct": {
-                "link": "ebb36_kyro_mount.stl"
-            }
-        },
-        "Escapement": {
-            "microbowden": {
-                "link": "ebb36_escapement_mount.stl"
-            },
-            "direct": {
-                "link": "ebb36_escapement_mount.stl"
-            }
-        }
+[
+    {
+        "name": "EBB36",
+        "internal_value": "ebb36",
+        "extruders": [
+            "sherpa_micro",
+            "vzhextrudort_low",
+            "kyro",
+            "escapement"
+        ]
     },
-    "SHT36": {
-        "Sherpa micro": {
-            "microbowden": {
-                "link": "ebb36_sherpa_micro_mount.stl"
-            },
-            "direct": {
-                "link": null
-            }
-        },
-        "Vz-Hextrudort-Low": {
-            "microbowden": {
-                "link": "ebb36_vzhextrudort_low_mount.stl"
-            },
-            "direct": {
-                "link": "ebb36_vzhextrudort_low_mount.stl"
-            }
-        },
-        "Kyro": {
-            "microbowden": {
-                "link": "ebb36_kyro_mount.stl"
-            },
-            "direct": {
-                "link": "ebb36_kyro_mount.stl"
-            }
-        },
-        "Escapement": {
-            "microbowden": {
-                "link": "ebb36_escapement_mount.stl"
-            },
-            "direct": {
-                "link": "ebb36_escapement_mount.stl"
-            }
-        }
+    {
+        "name": "SHT36",
+        "internal_value": "sht36",
+        "extruders": [
+            "sherpa_micro",
+            "vzhextrudort_low",
+            "kyro",
+            "escapement"
+        ]
     },
-    "Karabiner": {
-        "Sherpa micro": {
-            "microbowden": {
-                "link": "ebb36_sherpa_micro_mount.stl"
-            },
-            "direct": {
-                "link": null
-            }
-        },
-        "Vz-Hextrudort-Low": {
-            "microbowden": {
-                "link": "ebb36_vzhextrudort_low_mount.stl"
-            },
-            "direct": {
-                "link": "ebb36_vzhextrudort_low_mount.stl"
-            }
-        },
-        "Kyro": {
-            "microbowden": {
-                "link": "ebb36_kyro_mount.stl"
-            },
-            "direct": {
-                "link": "ebb36_kyro_mount.stl"
-            }
-        },
-        "Escapement": {
-            "microbowden": {
-                "link": "ebb36_escapement_mount.stl"
-            },
-            "direct": {
-                "link": "ebb36_escapement_mount.stl"
-            }
-        }
+    {
+        "name": "Annex Carabiner",
+        "internal_value": "carabiner",
+        "extruders": [
+            "sherpa_micro",
+            "vzhextrudort_low",
+            "kyro",
+            "escapement"
+        ]
     }
-}
+]

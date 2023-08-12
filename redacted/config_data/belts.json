@@ -1,14 +1,22 @@
 {
-    "6mm": {
-        "link": "6mm_clip_tight.stl"
-    },
-    "6mm EPDM": {
-        "link": "9mm_clip_loose.stl"
-    },
-    "9mm": {
-        "link": "6mm_clip_tight.stl"
-    },
-    "9mm EPDM": {
-        "link": "6mm_clip_loose.stl"
-    }
+    "sizes": [
+        {
+            "name": "6mm GT2 or GT3",
+            "internal_value": "6mm"
+        },
+        {
+            "name": "9mm GT2 or GT3",
+            "internal_value": "9mm"
+        }
+    ],
+    "tolerances": [
+        {
+            "name": "Tight (Kevlar)",
+            "internal_value": "tight"
+        },
+        {
+            "name": "Loose (EPDM)",
+            "internal_value": "loose"
+        }
+    ]
 }

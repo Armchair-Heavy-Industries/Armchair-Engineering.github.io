@@ -1,46 +1,37 @@
-{
-    "Sherpa micro": {
+[
+    {
+        "name": "Sherpa micro",
+        "internal_value": "sherpa_micro",
         "extruder_source": "<link to annex>",
-        "plates": {
-            "microbowden": {
-                "link": "sherpa_micro_bowden_plate.stl"
-            },
-            "direct": {
-                "link": null
-            }
-        }
+        "plate_options": [
+            "microbowden"
+        ]
     },
-    "Vz-Hextrudort-Low": {
+    {
+        "name": "Vz-Hextrudort-Low",
+        "internal_value": "vz_hextrudort_low",
         "extruder_source": "<link to wherever>",
-        "plates": {
-            "microbowden": {
-                "link": "vzhextrudort_low_bowden_plate.stl"
-            },
-            "direct": {
-                "link": "vzhextrudort_low_direct_plate.stl"
-            }
-        }
+        "plate_options": [
+            "microbowden",
+            "direct"
+        ]
     },
-    "Kyro": {
+    {
+        "name": "Kyro",
+        "internal_value": "kyro",
         "extruder_source": "<link to wherever>",
-        "plates": {
-            "microbowden": {
-                "link": "kyro_bowden_plate.stl"
-            },
-            "direct": {
-                "link": "kyro_direct_plate.stl"
-            }
-        }
+        "plate_options": [
+            "microbowden",
+            "direct"
+        ]
     },
-    "Escapement": {
+    {
+        "name": "Escapement",
+        "internal_value": "escapement",
         "extruder_source": "<link to escapement>",
-        "plates": {
-            "microbowden": {
-                "link": "escapement_bowden_plate.stl"
-            },
-            "direct": {
-                "link": "escapement_direct_plate.stl"
-            }
-        }
+        "plate_options": [
+            "microbowden",
+            "direct"
+        ]
     }
-}
+]

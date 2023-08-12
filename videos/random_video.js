@@ -1,4 +1,4 @@
-var videos = ["bedspin", "printing", "vasing_big", "vasing_small"];
+var videos = ["bedspin", "printing", "vasing_big", "vasing_small", "throw1", "throw2"];
 
 window.addEventListener("DOMContentLoaded", function () {
   var videoTag = document.getElementById("prexz");

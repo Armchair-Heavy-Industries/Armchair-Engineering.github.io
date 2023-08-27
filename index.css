@@ -1,6 +1,80 @@
-body {
-  width: 100vw;
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
   margin: 0;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   padding: 0;
+  width: 100vw;
+  height: 100vh;
+  
   background-color: #222;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  display: flex;
+  margin: 0 auto;
+  width: 640px;
+
+  border: 1px solid #333;
+  border-radius: 12px;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+nav > div {
+  flex: 1 1 auto;
+  padding: 16px 0;
+  padding-left: 16px;
+
+  align-self: stretch;
+  text-align: left;
+}
+
+nav > div:first-child {
+  border-bottom: 1px solid #333;
+}
+
+nav > div:last-child {
+  border-top: 1px solid #333; 
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all ease 250ms;
+}
+
+a:hover {
+  color: #eeff00;
+}
+
+.logo {
+  align-self: center;
+  border-right: 1px solid #333;
+  padding: 36px 24px;
 }

@@ -76,5 +76,30 @@ a:hover {
 .logo {
   align-self: center;
   border-right: 1px solid #333;
-  padding: 36px 24px;
+  padding: 24;
+}
+
+@media (max-width: 600px) {
+  main {
+    width: calc(100vw - 48px);
+    flex-direction: column;
+  }
+
+  .logo {
+    align-self: auto;
+    border-right: none;
+    border-bottom: 1px solid #333;
+  }
+
+  nav > div {
+    text-align: center;
+  }
+
+  nav > div:first-child {
+    border-bottom: 1px solid #333;
+  }
+
+  nav > div:last-child {
+    border-top: 1px solid #333; 
+  }
 }

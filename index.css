@@ -89,6 +89,9 @@ a:hover {
     align-self: auto;
     border-right: none;
     border-bottom: 1px solid #333;
+  }
+
+  .logo img {
     border-radius: 50%;
   }
 

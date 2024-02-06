@@ -76,11 +76,11 @@ a:hover {
 .logo {
   align-self: center;
   border-right: 1px solid #333;
-  padding: 24;
+  padding: 30;
 }
 
 .logo img {
-  border-radius: 50%;
+  border-radius: 5%;
 }
 
 @media (max-width: 600px) {

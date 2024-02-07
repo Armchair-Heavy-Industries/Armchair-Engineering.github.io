@@ -43,6 +43,8 @@ nav {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
+  border: solid 1px #333;
+  border-radius: 4px;
 }
 
 nav > div {
@@ -54,24 +56,8 @@ nav > div {
   text-align: left;
 }
 
-nav > div:first-child {
-  border-bottom: 1px solid #333;
-  border-left: 1px solid #333;
-}
-
-nav > div:second-child {
-  border-bottom: 1px solid #333; 
-  border-left: 1px solid #333;
-}
-
-nav > div:second-child {
-  border-bottom: 1px solid #333; 
-  border-left: 1px solid #333;
-}
-
-nav > div:last-child {
-  border-top: 1px solid #333;
-  border-left: 1px solid #333;
+nav > div:not(last-child){
+  border-bottom: solid 1px #333;
 }
 
 a {

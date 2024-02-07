@@ -23,41 +23,10 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
-  
+
   background-color: #222;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-}
-
-main {
-  display: flex;
-  margin: 0 auto;
-  width: 640px;
-
-  border: 1px solid #333;
-  border-radius: 12px;
-  text-align: center;
-}
-
-nav {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  border: solid 1px #333;
-  border-radius: 4px;
-}
-
-nav > div {
-  flex: 1 1 auto;
-  padding: 16px 0;
-  padding-left: 16px;
-
-  align-self: stretch;
-  text-align: left;
-}
-
-nav > div:not(last-child){
-  border-bottom: solid 1px #333;
 }
 
 a {
@@ -71,9 +40,22 @@ a:hover {
   color: #eeff00;
 }
 
+.wrapper {
+  display: flex;
+  margin: 0 auto;
+  width: 640px;
+
+  border: 1px solid #333;
+  border-radius: 12px;
+  text-align: center;
+}
+
 .logo {
-  align-self: center;
-  padding: 30;
+  border-right: 1px solid #333;
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo img {
@@ -81,7 +63,26 @@ a:hover {
   padding: .03em
 }
 
-@media (max-width: 600px) {
+nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  border-radius: 4px;
+}
+
+nav > div {
+  flex: 1 1 auto;
+  padding: 16px 0 16px 16px;
+
+  align-self: stretch;
+  text-align: left;
+}
+
+nav > div:not(:last-child){
+  border-bottom: solid 1px #333;
+}
+
+@media (min-width: 640px) {
   main {
     width: calc(100vw - 48px);
     flex-direction: column;

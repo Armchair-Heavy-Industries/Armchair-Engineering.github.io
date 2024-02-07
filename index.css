@@ -41,9 +41,10 @@ a:hover {
 }
 
 .wrapper {
+  width: calc(100vw - 48px);
+  flex-direction: column;
   display: flex;
   margin: 0 auto;
-  width: 640px;
 
   border: 1px solid #333;
   border-radius: 12px;
@@ -51,7 +52,9 @@ a:hover {
 }
 
 .logo {
-  border-right: 1px solid #333;
+  align-self: auto;
+  border-bottom: 1px solid #333;
+  border-right: none;
   padding: 1em;
   display: flex;
   justify-content: center;
@@ -75,7 +78,7 @@ nav > div {
   padding: 16px 0 16px 16px;
 
   align-self: stretch;
-  text-align: left;
+  text-align: center;
 }
 
 nav > div:not(:last-child){
@@ -83,18 +86,17 @@ nav > div:not(:last-child){
 }
 
 @media (min-width: 640px) {
-  main {
-    width: calc(100vw - 48px);
-    flex-direction: column;
+  .wrapper {
+    width: 640px;
+    flex-direction: row;
   }
 
   .logo {
-    align-self: auto;
-    border-right: none;
-    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+    border-bottom: none;
   }
 
   nav > div {
-    text-align: center;
+    text-align: left;
   }
 }

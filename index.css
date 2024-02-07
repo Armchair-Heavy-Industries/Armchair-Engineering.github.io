@@ -56,14 +56,22 @@ nav > div {
 
 nav > div:first-child {
   border-bottom: 1px solid #333;
+  border-left: 1px solid #333;
 }
 
 nav > div:second-child {
   border-bottom: 1px solid #333; 
+  border-left: 1px solid #333;
 }
-  
+
+nav > div:second-child {
+  border-bottom: 1px solid #333; 
+  border-left: 1px solid #333;
+}
+
 nav > div:last-child {
-  border-top: 1px solid #333; 
+  border-top: 1px solid #333;
+  border-left: 1px solid #333;
 }
 
 a {
@@ -101,25 +109,5 @@ a:hover {
 
   nav > div {
     text-align: center;
-  }
-
-  nav > div:first-child {
-    border-bottom: 1px solid #333;
-    border-left: 1px solid #333;
-  }
-
-  nav > div:second-child {
-    border-bottom: 1px solid #333; 
-    border-left: 1px solid #333;
-  }
-  
-  nav > div:second-child {
-    border-bottom: 1px solid #333; 
-    border-left: 1px solid #333;
-  }
-  
-  nav > div:last-child {
-    border-top: 1px solid #333;
-    border-left: 1px solid #333;
   }
 }

@@ -8,14 +8,25 @@ window.addEventListener("DOMContentLoaded", function () {
   function createSource(video, mimetype) {
     var source = document.createElement("source");
     source.src = video;
-    source.mimetype = mimetype;
+    source.type = mimetype;
     return source;
   }
 
   function randomVideo() {
     var video = videos[Math.floor(Math.random() * videos.length)];
 
-    videoTag.src = "videos/" + video + ".webm";
+
+    videoTag.innerHTML = '';
+    
+
+    var webmSource = createSource(`videos/${video}.webm`, 'video/webm');
+    var mp4Source = createSource(`videos/${video}.mp4`, 'video/mp4');
+    
+
+    videoTag.appendChild(webmSource);
+    videoTag.appendChild(mp4Source);
+    
+    videoTag.load(); // Important to reload the video tag to apply new sources
   }
   videoTag.addEventListener("ended", randomVideo);
   randomVideo();
